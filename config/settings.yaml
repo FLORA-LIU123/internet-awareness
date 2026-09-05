@@ -1,0 +1,42 @@
+# Global settings for the zero-permission situational awareness platform
+
+database:
+  path: "data/awareness.db"
+
+logging:
+  level: "INFO"
+  file: "logs/app.log"
+  max_bytes: 10485760   # 10 MB
+  backup_count: 5
+
+collection:
+  # 每小时整点采集，适合部署在常驻主机或本地演示环境
+  # 若需降低频率可改为 interval_minutes: 60，或指定 schedule_times 列表
+  interval_minutes: 60
+  http_timeout_seconds: 10
+  icmp_count: 4
+
+threat_intel:
+  # 请通过环境变量 OTX_API_KEY 配置密钥，不要在此处写明文
+  otx_api_key: ""
+
+scoring:
+  weights:
+    availability: 0.38
+    response_time: 0.24
+    link_connectivity: 0.14
+    security_risk: 0.24
+
+prediction:
+  forecast_horizon_hours: 6
+  min_training_points: 30
+  refit_interval_minutes: 30
+
+rules:
+  health_score_threshold: 60.0
+  deviation_multiplier: 2.0   # alert when |actual - yhat| > multiplier * std
+  alert_cooldown_minutes: 10
+
+ui:
+  auto_refresh_seconds: 30
+  default_history_hours: 24

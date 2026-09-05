@@ -1,0 +1,61 @@
+targets:
+- context:
+    admin: 校园网络信息中心
+    compliance: 教育部等保 2.0 三级要求
+    peak: 工作日 8:00–9:00、12:00–13:00、19:00–22:00（学生晚间上网高峰）
+    risk_note: 高校 IP 段常被扫描，需重点防范 Web 漏洞和 DDoS
+    users: 全校师生（约数万人）
+  enabled: true
+  ip: 218.104.146.107
+  name: 湖南农业大学门户
+  tags:
+  - university
+  - portal
+  type: both
+  url: https://www.hunau.edu.cn
+- context:
+    admin: 省政务信息化主管部门
+    compliance: 等保 2.0 三级及以上、政务外网安全规范
+    peak: 工作日 9:00–11:30、14:00–17:00（政务办理高峰）
+    risk_note: 政府网站是高价值攻击目标，需严格防范篡改、钓鱼和数据泄露
+    users: 全省公众及政务人员
+  enabled: true
+  ip: 113.246.57.9
+  name: 湖南省人民政府
+  tags:
+  - government
+  - portal
+  type: both
+  url: https://www.hunan.gov.cn
+- context:
+    admin: 企业 SRE / 运维团队
+    compliance: 企业内部 SLA 标准（通常 99.9% 以上可用性）
+    peak: 全天候，流量分布较均匀，节假日可能有波动
+    risk_note: 企业官网代表品牌形象，可用性和安全性直接影响商业信誉
+    users: 全球访客及合作伙伴
+  enabled: true
+  ip: 42.48.120.66
+  name: 字节跳动官网
+  tags:
+  - enterprise
+  - tech
+  type: http
+  url: https://www.bytedance.com/zh/
+- context:
+    admin: 企业 SRE / 运维团队
+    compliance: 企业内部 SLA 标准（通常 99.9% 以上可用性）
+    peak: 全天候，流量分布较均匀，节假日可能有波动
+    risk_note: 企业官网代表品牌形象，可用性和安全性直接影响商业信誉
+    users: 全球访客及合作伙伴
+  enabled: true
+  ip: 116.162.169.116
+  name: 腾讯官网
+  tags:
+  - enterprise
+  - tech
+  type: http
+  url: https://www.tencent.com/zh-cn/index.html
+- enabled: true
+  name: 百度官网
+  protocol: https
+  url: https://www.baidu.com
